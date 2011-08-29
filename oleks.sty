@@ -1,0 +1,21 @@
+\ProvidesPackage{oleks}
+\RequirePackage{graphicx}
+\RequirePackage{xparse}
+\RequirePackage{xstring}
+
+\NewDocumentCommand\image{O{1}O{htbp!}mm}
+{
+	\begin{figure}[#2]
+	\centering
+	\IfDecimal{#1}
+	{	
+		\includegraphics[scale=#1]{images/#3}
+	}
+	{
+		\includegraphics[#1]{images/#3}
+	}
+	\caption[]{#4}
+	\label{image:#3}
+	\end{figure}
+}
+

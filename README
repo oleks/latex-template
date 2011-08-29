@@ -1,0 +1,20 @@
+This is a growing collection of updated commands I've built up over the recent
+years.
+
+\image[][]{}{}
+
+This command allows you to quickly import an image as a figure using the
+regular \includegraphics command from graphicx.
+
+1. you have a choice here, either specify a numeric value which will default to
+the scale of the included graphic, or the entire options string for
+\includegraphic, e.g. "width=\textwidth". Defaults to 1.
+
+2. This argument to allows you to change the floating options of the figure.
+Defaults to htbp!.
+
+3. The graphic filename with/without extension. The image has to be located in
+an images folder relative to the file from where the command is called. The
+figure's label is thereafter deterministically set to "image:filename".
+
+4. The caption for the image. Commands are allowed in the caption.
