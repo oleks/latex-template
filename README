@@ -6,9 +6,9 @@ years.
 This command allows you to quickly import an image as a figure using the
 regular \includegraphics command from graphicx.
 
-1. you have a choice here, either specify a numeric value which will default to
+1. You have a choice here, either specify a numeric value which will default to
 the scale of the included graphic, or the entire options string for
-\includegraphic, e.g. "width=\textwidth". Defaults to 1.
+\includegraphics, e.g. "width=\textwidth". Defaults to 1.
 
 2. This argument to allows you to change the floating options of the figure.
 Defaults to htbp!.
