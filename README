@@ -6,6 +6,8 @@ years.
 This command allows you to quickly import an image as a figure using the
 regular \includegraphics command from graphicx.
 
+Arguments: 
+
 1. You have a choice here, either specify a numeric value which will default to
 the scale of the included graphic, or the entire options string for
 \includegraphics, e.g. "width=\textwidth". Defaults to 1.
