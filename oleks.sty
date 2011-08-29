@@ -3,19 +3,51 @@
 \RequirePackage{xparse}
 \RequirePackage{xstring}
 
-\NewDocumentCommand\image{O{1}O{htbp!}mm}
+% figures
+
+\NewDocumentCommand\includeFigure{O{1}O{htbp!}mm}
 {
 	\begin{figure}[#2]
 	\centering
 	\IfDecimal{#1}
 	{	
-		\includegraphics[scale=#1]{images/#3}
+		\includegraphics[scale=#1]{figures/#3}
 	}
 	{
-		\includegraphics[#1]{images/#3}
+		\includegraphics[#1]{figures/#3}
 	}
 	\caption[]{#4}
-	\label{image:#3}
+	\label{figure:#3}
 	\end{figure}
 }
 
+% references
+
+\NewDocumentCommand\referToSection{m}
+{
+	\textsection\ref{section:#1}/\pageref{section:#1}
+}
+
+\NewDocumentCommand\referToFigure{m}
+{
+	Figure \ref{figure:#1}/\pageref{figure:#1}
+}
+
+\NewDocumentCommand\referToTable{m}
+{
+	Table \textsection\ref{table:#1}/\pageref{table:#1}
+}
+
+% sections
+
+%% automatically generate a label when a section is defined
+%% allow to pick the sort of section by specifying a toc depth
+
+% tables
+
+%\NewDocumentCommand\quickTable{O{htbp!}m}
+%{
+%	\begin{table}[t!]
+%	\centering
+%	\end{table}
+%}
