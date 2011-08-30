@@ -4,7 +4,155 @@
 \RequirePackage{xparse}
 \RequirePackage{xstring}
 \RequirePackage{ifthen}
+\RequirePackage{xkeyval}
+
+%colors
+
+\RequirePackage[usenames,dvipsnames]{color}
 \RequirePackage[table]{xcolor}
+\definecolor{shade}{RGB}{245,245,245}
+
+% langauge
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[english]{babel}
+
+% font
+
+\RequirePackage[T1]{fontenc}
+\RequirePackage{mathpazo}
+
+% math
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+
+\everymath{\displaystyle}
+
+% code
+
+\RequirePackage{clrscode3e}
+\RequirePackage{verbatim}
+\RequirePackage{listings}
+\lstset
+{
+	tabsize=2,
+	numbers=left,
+	breaklines=true,
+	backgroundcolor=\color{shade},
+	framexleftmargin=0.05in,
+	basicstyle=\ttfamily\small,
+	numberstyle=\tiny,
+	keywordstyle=\color{RoyalBlue},
+	stringstyle=\color{Maroon},
+	commentstyle=\color{ForestGreen}
+}
+
+
+% links
+
+\RequirePackage{url}
+\RequirePackage[pdftex,colorlinks=true]{hyperref}
+\hypersetup
+{
+	bookmarksnumbered,
+	linkcolor=RoyalBlue,
+	anchorcolor=RoyalBlue,
+	citecolor=RoyalBlue,
+	urlcolor=RoyalBlue,
+	pdfstartview={FitV},
+	pdfdisplaydoctitle
+}
+
+% setup
+
+\newcommand{\subject}{[subject not setup]}
+\newcommand{\setSubject}[1]
+{
+	\renewcommand{\subject}{#1}
+}
+
+\newcommand{\location}{[location not setup]}
+\newcommand{\setLocation}[1]
+{
+	\renewcommand{\location}{#1}
+}
+
+
+\newcommand{\assignment}{\empty}
+\newcommand{\setAssignment}[1]
+{
+	\renewcommand{\assignment}{#1}\title{#1}\hypersetup{pdftitle=#1}
+}
+\setAssignment{[assignment not setup]}
+
+\newcommand{\staticDate}{\empty}
+\newcommand{\setStaticDate}[1]
+{
+	\renewcommand{\staticDate}{#1}\date{#1}
+}
+\setStaticDate{[date not setup]}
+
+\define@key{setup}{assignment}{\setAssignment{#1}}
+\define@key{setup}{date}{\setStaticDate{#1}}
+\define@key{setup}{subject}{\setSubject{#1}}
+\define@key{setup}{location}{\setLocation{#1}}
+\NewDocumentCommand\setup{m}{\setkeys{setup}{#1}}
+
+% author
+
+\newcommand{\shortAuthor}{\empty}
+\newcommand{\setShortAuthor}[1]
+{
+	\renewcommand{\shortAuthor}{#1}
+}
+
+\newcommand{\longAuthor}{\empty}
+\newcommand{\setLongAuthor}[1]
+{
+	\renewcommand{\longAuthor}{#1}
+	\author{#1}
+	\hypersetup{pdfauthor=#1}
+	\setShortAuthor{#1}
+}
+\setLongAuthor{[author not setup]}
+
+\newcommand{\authorAddendum}{\empty}
+\newcommand{\setAuthorAddendum}[1]
+{
+	\renewcommand{\authorAddendum}{#1}
+}
+
+\define@key{setupAuthor}{short}{\setShortAuthor{#1}}
+\define@key{setupAuthor}{addendum}{\setAuthorAddendum{#1}}
+\NewDocumentCommand\setupAuthor{O{}m}
+{
+	\setLongAuthor{#2}
+	\setkeys{setupAuthor}{#1}
+}
+
+% fancy
+
+\RequirePackage{fullpage}
+\RequirePackage{fancyhdr}
+\RequirePackage{lastpage}
+
+\pagestyle{fancy}
+\lhead{\footnotesize\shortAuthor\\\authorAddendum}
+\chead{\footnotesize\subject\\\assignment}
+\rhead{\footnotesize\location\\\staticDate}
+\cfoot{\thepage/\pageref*{LastPage}}
+\renewcommand{\headrulewidth}{0in}
+\renewcommand{\headsep}{40pt}
+\setlength{\headheight}{20pt}
+\addtolength{\textheight}{-20pt}
+
+\fancypagestyle{first}
+{
+	\fancyhf{}
+	\cfoot{\thepage/\pageref*{LastPage}}
+}
 
 % figures
 
@@ -28,7 +176,7 @@
 
 \NewDocumentCommand\referToSection{m}
 {
-	\textsection\ref{section:#1}/\pageref{section:#1}
+	\textsection\ \ref{section:#1}/\pageref{section:#1}
 }
 
 \NewDocumentCommand\referToFigure{m}
@@ -70,16 +218,13 @@
 	}
 }
 
-
 % tables
-
-\definecolor{tableShade}{RGB}{245,245,245}
 
 \NewDocumentCommand\makeTable{O{htbp!}mmmmm}
 {
 	\begin{table}[#1]
 	\centering
-	\rowcolors{2}{tableShade}{white}
+	\rowcolors{2}{shade}{white}
 	\begin{tabular}{#4}
 	\hline
 	#5\\
@@ -90,3 +235,7 @@
 	\label{table:#2}
 	\end{table}
 }
+
+% other shorthands
+
+\NewDocumentCommand\mono{m}{\ttfamily#1}
