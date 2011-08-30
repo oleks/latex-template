@@ -1,6 +1,30 @@
 This is a growing collection of updated commands I've built up over the recent
 years.
 
+**********
+* SAMPLE *
+**********
+
+\documentclass{article}
+
+\usepackage{oleks}
+
+\begin{document}
+
+\startSection{Top section}
+\startSection[2]{Subsection's first}
+\startSection[3]{Subsubsection}[hello]
+
+\includeFigure[0.5]{somefile}{Some caption}
+
+\referToSection{top-section}
+\referToSection{subsections-first}
+\referToSection{hello}
+
+\referToFigure{somefile}
+
+\end{document}
+
 ************
 * COMMANDS *
 ************
