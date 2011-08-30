@@ -6,8 +6,7 @@ years.
 ************
 
 
-**************
-* References *
+* REFERENCES *
 
 \referToSection{<label>}
 
@@ -24,8 +23,7 @@ Refer to labels figure:<label>.
 Refer to labels tabel:<label>.
 
 
-***********
-* Figures *
+* FIGURES *
 
 \includeFigure[<options>]{<filename>}{<caption>}[<float>]
 
@@ -48,8 +46,7 @@ thereafter deterministically set to "figure:filename".
 Defaults to htbp!.
 
 
-************
-* Sections *
+* SECTIONS *
 
 \startSection[<level>]{<name>}[<label>]
 
