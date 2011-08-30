@@ -63,10 +63,10 @@
 \NewDocumentCommand\startSection{O{1}mO{\empty}}
 {
 	\ifthenelse{\equal{#1}{2}}
-	{2\startSectionAux[#3]{#2}{subsection}}
+	{\startSectionAux[#3]{#2}{subsection}}
 	{\ifthenelse{\equal{#1}{3}}
-	{3\startSectionAux[#3]{#2}{subsubsection}}
-	{0\startSectionAux[#3]{#2}{section}}
+	{\startSectionAux[#3]{#2}{subsubsection}}
+	{\startSectionAux[#3]{#2}{section}}
 	}
 }
 
