@@ -1,5 +1,9 @@
 \ProvidesPackage{oleks}
 
+\newcommand\dofancy{false}
+\DeclareOption{fancy}{\renewcommand\dofancy{true}}
+\ProcessOptions\relax
+
 \RequirePackage{graphicx}
 \RequirePackage{xparse}
 \RequirePackage{xstring}
@@ -134,6 +138,8 @@
 
 % fancy
 
+\ifthenelse{\equal{\dofancy}{true}}{
+
 \RequirePackage{fullpage}
 \RequirePackage{fancyhdr}
 \RequirePackage{lastpage}
@@ -153,6 +159,7 @@
 	\fancyhf{}
 	\cfoot{\thepage/\pageref*{LastPage}}
 }
+}{}
 
 % figures
 
@@ -174,7 +181,7 @@
 
 % captions
 
-\RequirePacakage[hang,small,bf]{caption}
+\RequirePackage[hang,small,bf]{caption}
 
 % references
 

@@ -59,6 +59,10 @@ resemblance to one another in terms of layout.
 The macros also make sure to both update the latex \title and \author, as well
 as the pdftitle and pdfauthor specifications in \hypersetup.
 
+To start of with, there are two options, you can choose to apply the fancy
+style included in the package or not, by either specifying
+\usepackage[fancy]{oleks} or \usepacakge{oleks} respectively.
+
 \setup{<keyvalues>}
 
 General properties setup, except for the author.
