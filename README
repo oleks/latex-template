@@ -1,22 +1,69 @@
 This is a growing collection of updated commands I've built up over the recent
 years.
 
-\image[][]{}{}
+************
+* COMMANDS *
+************
 
-This command allows you to quickly import an image as a figure using the
-regular \includegraphics command from graphicx.
+
+**************
+* References *
+
+\referToSection{<label>}
+
+Refer to labels section:<label>.
+
+
+\referToFigure{<label>}
+
+Refer to labels figure:<label>.
+
+
+\referToTable{<label>}
+
+Refer to labels tabel:<label>.
+
+
+***********
+* Figures *
+
+\includeFigure[<options>]{<filename>}{<caption>}[<float>]
+
+This command allows you to quickly import a figre using the regular
+\includegraphics command from graphicx. The figure is pulled from the
+``figures'' directory which is assumed to exist in the project root.
 
 Arguments: 
 
-1. You have a choice here, either specify a numeric value which will default to
-the scale of the included graphic, or the entire options string for
+<options> You have a choice here, either specify a numeric value which will
+default to the scale of the included graphic, or the entire options string for
 \includegraphics, e.g. "width=\textwidth". Defaults to 1.
 
-2. This argument to allows you to change the floating options of the figure.
+<filename> The graphic filename with/without extension. The figure's label is
+thereafter deterministically set to "figure:filename".
+
+<caption> The caption for the image. Commands are allowed in the caption.
+
+<float> This argument to allows you to change the floating options of the figure.
 Defaults to htbp!.
 
-3. The graphic filename with/without extension. The image has to be located in
-an images folder relative to the file from where the command is called. The
-figure's label is thereafter deterministically set to "image:filename".
 
-4. The caption for the image. Commands are allowed in the caption.
+************
+* Sections *
+
+\startSection[<level>]{<name>}[<label>]
+
+A shorthand for defining sections, subsection and so on which also defines a
+label for the section.
+
+Arguments:
+
+<level> Level of the section to define, for now only 1, 2 & 3 are supported.
+
+<name> Name of the section. If the name matches [a-z_-' ]/i, the label becomes
+the name lower-cased with space characters replaced by dashes. This allows to
+quickly reference a section, subsection etc. using the
+\referToSection{preparsed-name}.
+
+<label> Override label to allow commands and other special characters in the
+name. The final label is always prefixed with section: regardleth of the depth.
