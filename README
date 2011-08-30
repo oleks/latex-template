@@ -48,30 +48,31 @@ lol&lol
 * SETUP *
 *********
 
-Setup is a part of the package where a series of commands have been supplied to
-enable initial document setup, such as the title, the date of the work, the
-headers and footers.
+Setup is the part of the package where a series of commands have been supplied
+to enable initial document setup, such as the title, due date, headers and
+footers, etc.
 
-There's not too much freedom due to a farely well defined initial style, and
-besides, the package is meant for university assignments which usually bare a
+There's not too much freedom due to a farely constrained initial layout, and
+besides, the package is meant for university assignments which should bear a
 resemblance to one another in terms of layout.
-
 
 \setup{<keyvalues>}
 
-Keyvalues:
+General properties setup, except for the author.
 
-[location] This is the university or other type of ``location''. Defaults to DIKU.
+<keyvalues>
+
+[location] This is the university or other type of ``location''.
 
 [subject] This is the subject for which this assignment is written.
 
-[assignment] This is the name of the assignment that effectively becomes the
+[assignment] This is the name of the assignment; effectively becomes the
 title of the document.
 
-[date] The default functionality of the day's date being specified is not very
-useful. Usually what you want to specify in the assignment is the due date. The
-[date] specfier allows you to do that. The default date functionality is
-overriden so you don't make such a silly mistake.
+[date] The default functionality of the day's date being specified given \date
+is not very useful. Usually, what you want to specify is the assignment due
+date. The [date] specfier allows you to do just that. The default \date
+functionality is also overriden so you don't make such a silly mistake.
 
 \setup[<keyvalues>]{<author>}
 
