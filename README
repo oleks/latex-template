@@ -8,6 +8,13 @@ years.
 
 * REFERENCES *
 
+The way references are styled is inspired by Accelerated C++, ISBN
+0-201-70353-X. The idea is to both show the section/figure/table section count
+AND the page where to find the section/figure/table. This makes for an easier
+flipback since you only have to look up the page and then the section on the
+page then lookup the section through the entire book with only a rough idea of
+where to find the section/figure/table.
+
 \referToSection{<label>}
 
 Refer to labels section:<label>.
