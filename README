@@ -16,6 +16,8 @@ years.
 
 \begin{document}
 
+\maketitle
+
 \startSection{Top section}
 \startSection[2]{Subsection's first}
 \startSection[3]{Subsubsection}[hello]
