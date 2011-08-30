@@ -4,7 +4,7 @@
 \RequirePackage{xparse}
 \RequirePackage{xstring}
 \RequirePackage{ifthen}
-
+\RequirePackage[table]{xcolor}
 
 % figures
 
@@ -73,9 +73,20 @@
 
 % tables
 
-%\NewDocumentCommand\quickTable{O{htbp!}m}
-%{
-%	\begin{table}[t!]
-%	\centering
-%	\end{table}
-%}
+\definecolor{tableShade}{RGB}{245,245,245}
+
+\NewDocumentCommand\makeTable{O{t!}mmmmm}
+{
+	\begin{table}[#1]
+	\centering
+	\rowcolors{2}{tableShade}{white}
+	\begin{tabular}{#4}
+	\hline
+	#5\\
+	\hline
+	#6\\
+	\end{tabular}
+	\caption[]{#3}
+	\label{table:#2}
+	\end{table}
+}

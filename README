@@ -101,3 +101,27 @@ refuses the input.
 <label> Override label to allow commands and other special characters in the
 name. The final label is always prefixed with section: regardleth of the depth.
 Defaults to : see <name> argument.
+
+* TABLES *
+
+\makeTable[<float>]{<label>}{<caption>}{<layout>}{<headers>}{<rows>}
+
+A shortcut to making tables.
+
+Arguments:
+
+<float> The float specification for the surrounding table environment. Defaults
+to t!.
+
+<label> The label for the table, however the final label is prefixed by table:.
+
+<caption> The caption for the table. The caption may contain commands.
+
+<layout> The usual layout specification for the columns, e.g. |c|c|c|.
+
+<headers> The headers of the table. By default the header row is separated with
+a hard line. It is common for the headers to be bold, however there doesn't
+seem to be a simple way to do this, yet. The columns should be separated by &,
+as usual.
+
+<rows> The rows of the table separated by \\ with the columns separated by &, as usual.
