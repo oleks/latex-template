@@ -8,19 +8,19 @@
 
 % figures
 
-\NewDocumentCommand\includeFigure{O{1}O{htbp!}mm}
+\NewDocumentCommand\includeFigure{O{1}mmO{htbp!}}
 {
-	\begin{figure}[#2]
+	\begin{figure}[#4]
 	\centering
 	\IfDecimal{#1}
 	{	
-		\includegraphics[scale=#1]{figures/#3}
+		\includegraphics[scale=#1]{figures/#2}
 	}
 	{
-		\includegraphics[#1]{figures/#3}
+		\includegraphics[#1]{figures/#2}
 	}
-	\caption[]{#4}
-	\label{figure:#3}
+	\caption[]{#3}
+	\label{figure:#2}
 	\end{figure}
 }
 
