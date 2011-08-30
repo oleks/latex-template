@@ -23,6 +23,18 @@ years.
 
 \referToFigure{somefile}
 
+\makeTable
+{hello}
+{Nice table}
+{cc}
+{noob&nice}
+{
+lol&lol\\
+lol&lol
+}
+
+\referToTable{hello}
+
 \end{document}
 
 ************
@@ -111,7 +123,7 @@ A shortcut to making tables.
 Arguments:
 
 <float> The float specification for the surrounding table environment. Defaults
-to t!.
+to htbp!.
 
 <label> The label for the table, however the final label is prefixed by table:.
 
@@ -124,4 +136,5 @@ a hard line. It is common for the headers to be bold, however there doesn't
 seem to be a simple way to do this, yet. The columns should be separated by &,
 as usual.
 
-<rows> The rows of the table separated by \\ with the columns separated by &, as usual.
+<rows> The rows of the table separated by \\ with the columns separated by &,
+as usual.
