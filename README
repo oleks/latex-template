@@ -9,6 +9,11 @@ years.
 
 \usepackage{oleks}
 
+\setup{location=DIKU,subject=Advanced}
+\setup{assignment=Hello,date=1970-01-02}
+
+\setupAuthor[short=os,addendum=1990-11-17]{Oleksandr Shturmov}
+
 \begin{document}
 
 \startSection{Top section}
@@ -36,6 +41,53 @@ lol&lol
 \referToTable{hello}
 
 \end{document}
+
+*********
+* SETUP *
+*********
+
+Setup is a part of the package where a series of commands have been supplied to
+enable initial document setup, such as the title, the date of the work, the
+headers and footers.
+
+There's not too much freedom due to a farely well defined initial style, and
+besides, the package is meant for university assignments which usually bare a
+resemblance to one another in terms of layout.
+
+
+\setup{<keyvalues>}
+
+Keyvalues:
+
+[location] This is the university or other type of ``location''. Defaults to DIKU.
+
+[subject] This is the subject for which this assignment is written.
+
+[assignment] This is the name of the assignment that effectively becomes the
+title of the document.
+
+[date] The default functionality of the day's date being specified is not very
+useful. Usually what you want to specify in the assignment is the due date. The
+[date] specfier allows you to do that. The default date functionality is
+overriden so you don't make such a silly mistake.
+
+\setup[<keyvalues>]{<author>}
+
+<author> Is the long author specification which will show up with the document
+title. It is also the default value for a short author specification, see
+furhter under Keyvalues.
+
+<keyvalues>
+
+[short] This is the short author specification, overriding this value allows
+you to specify a shorter author specification for the top left corner header,
+in case the long author specification does not fit.
+
+[addendum] More often then not an addendum is required for to the names of the
+students involved like some sort of identification number. This specification
+will show up in the top left corner of the header, just below the short/long
+author specification.
+
 
 ************
 * COMMANDS *
