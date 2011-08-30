@@ -56,6 +56,9 @@ There's not too much freedom due to a farely constrained initial layout, and
 besides, the package is meant for university assignments which should bear a
 resemblance to one another in terms of layout.
 
+The macros also make sure to both update the latex \title and \author, as well
+as the pdftitle and pdfauthor specifications in \hypersetup.
+
 \setup{<keyvalues>}
 
 General properties setup, except for the author.
