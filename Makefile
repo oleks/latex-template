@@ -13,7 +13,7 @@ compile:
 
 bibtex: compile
 	cd $(OUTDIR)
-	bibtex $(OUTDIR)/$(FILENAME).aux
+	bibtex $(FILENAME).aux
 	cd $(CURDIR)
 
 xview: compile
