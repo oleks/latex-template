@@ -56,11 +56,15 @@ label for the section.
 Arguments:
 
 <level> Level of the section to define, for now only 1, 2 & 3 are supported.
+Defaults to 1.
 
 <name> Name of the section. If the name matches [a-z_-' ]/i, the label becomes
 the name lower-cased with space characters replaced by dashes. This allows to
 quickly reference a section, subsection etc. using the
-\referToSection{preparsed-name}.
+\referToSection{section-name}. ATTENTION! If the name contains other than the
+aforementioned characters and and no label override is provided, no warning or
+error is produced, so the script may fail. 
 
 <label> Override label to allow commands and other special characters in the
 name. The final label is always prefixed with section: regardleth of the depth.
+Defaults to : see <name> argument.
