@@ -248,3 +248,16 @@
 % other shorthands
 
 \NewDocumentCommand\mono{m}{{\ttfamily#1}}
+
+\RenewDocumentCommand\maketitle{}
+{
+	\begin{minipage}{\textwidth}
+	\begin{center}
+	\LARGE\assignment\\\ \\
+	\large\longAuthor\\
+	\normalsize\authorAddendum\\\ \\
+	\normalsize\staticDate
+	\end{center}
+	\end{minipage}
+	\ifthenelse{\equal{\dofancy}{true}}{\thispagestyle{first}}{}
+}
