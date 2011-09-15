@@ -1,5 +1,5 @@
 BASENAME  = main
-FILENAME  = the-art-of-computer-program-structure
+FILENAME  = template
 OUTDIR    = $(CURDIR)/output
 OUTFILE   = $(OUTDIR)/$(FILENAME).pdf
 
