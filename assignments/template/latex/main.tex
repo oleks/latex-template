@@ -1,19 +1,25 @@
-\documentclass[a4paper]{article}
+\documentclass[a4paper,twocolumn]{article}
 
 \usepackage[fancy]{oleks}
 
-\setup{location=DIKU,subject={Advanced Programming}}
-\setupAuthor[addendum={dzf719 \& dfz719}]{Søren Dahlgaard \& Oleksandr Shturmov}
+\setup{location=DIKU,subject={\LaTeX},assignment={Template},date={March 29th, 2012}}
+\setupAuthor[addendum={\email{oleks@diku.dk}}]{Oleksandr Shturmov}
+
+\newcommand{\commandstyle}[0]{\tt\textbackslash}
+\newcommand{\command}[1]{{\commandstyle #1}}
 
 \begin{document}
 
-\maketitle
+\twocolumn[\maketitle]
 \thispagestyle{first}
 
-Bla..
+\input{math}
 
 \newpage
 
 Bla..
+
+\bibliographystyle{apalike}
+\bibliography{../references}
 
 \end{document}
