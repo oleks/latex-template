@@ -86,12 +86,6 @@
 	\renewcommand{\subject}{#1}%
 }
 
-\newcommand{\location}{[location not setup]}
-\newcommand{\setLocation}[1]{%
-	\renewcommand{\location}{#1}%
-}
-
-
 \newcommand{\assignment}{\empty}
 \newcommand{\setAssignment}[1]{%
 	\renewcommand{\assignment}{#1}\title{#1}\hypersetup{pdftitle={#1}}%
@@ -107,8 +101,26 @@
 \define@key{setup}{assignment}{\setAssignment{#1}}
 \define@key{setup}{date}{\setStaticDate{#1}}
 \define@key{setup}{subject}{\setSubject{#1}}
-\define@key{setup}{location}{\setLocation{#1}}
 \NewDocumentCommand\setup{m}{\setkeys{setup}{#1}}
+
+% location
+
+\newcommand{\shortLocation}{\empty}
+\newcommand{\setShortLocation}[1]{%
+  \renewcommand{\shortLocation}{#1}%
+}
+
+\newcommand{\longLocation}{[somewhere along the rainbow]}
+\newcommand{\setLongLocation}[1]{%
+  \renewcommand{\longLocation}{#1}%
+  \setShortLocation{#1}%
+}
+
+\define@key{setupLocation}{short}{\setShortLocation{#1}}
+\NewDocumentCommand\setupLocation{O{}m}{%
+	\setLongLocation{#2}%
+	\setkeys{setupLocation}{#1}%
+}
 
 % author
 
@@ -121,7 +133,7 @@
 \newcommand{\setLongAuthor}[1]{%
 	\renewcommand{\longAuthor}{#1}%
 	\author{#1}%
-	\hypersetup{pdfauthor=#1}%
+	\hypersetup{pdfauthor={#1}}%
 	\setShortAuthor{#1}%
 }
 \setLongAuthor{[author not setup]}
@@ -149,7 +161,7 @@
 \pagestyle{fancy}
 \lhead{\footnotesize\shortAuthor\\\authorAddendum}
 \chead{\footnotesize\subject\\\assignment}
-\rhead{\footnotesize\location\\\staticDate}
+\rhead{\footnotesize\shortLocation\\\staticDate}
 \cfoot{\thepage/\pageref*{LastPage}}
 \renewcommand{\headrulewidth}{0in}
 \renewcommand{\headsep}{40pt}
@@ -251,6 +263,8 @@
 {
 	\begin{center}
 	\LARGE\assignment\\\ \\
+  \large\longLocation\ (\shortLocation)\\
+  \large\subject\\\ \\
 	\large\longAuthor\\
 	\normalsize\authorAddendum\\\ \\
 	\normalsize\staticDate
