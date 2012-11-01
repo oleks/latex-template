@@ -8,8 +8,8 @@ reference to https://github.com/oleks/.
 # Template
 
 The template package is intended to serve as a generic template for my written
-work at the university. It imports some common packages, and decides the fonts
-and some general layout.
+work at the university. It imports some common packages, decides the fonts and
+some general layout.
 
 ## Import
 
