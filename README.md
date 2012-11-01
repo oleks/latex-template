@@ -13,8 +13,8 @@ the university.
 ## Import
 
 The template has two flavours, one that uses fancy headers and footers, and one
-that does not. The latter is the default. To import the template with the fancy
-flavour write.
+that does not. The latter is the default. To import the template package with
+the fancy flavour, add the atom `fancy` as an option, i.e.
 
     \usepackage[fancy]{template}
 
