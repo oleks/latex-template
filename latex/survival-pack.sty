@@ -1,0 +1,130 @@
+\ProvidesPackage{survival-pack}
+
+\PassOptionsToPackage{table}{xcolor}
+\PassOptionsToPackage{usenames,dvipsnames}{color}
+
+\PassOptionsToPackage{utf8}{inputenc}
+\PassOptionsToPackage{english}{babel}
+
+% if-then-else
+
+\RequirePackage{ifthen}
+
+%colors
+
+\RequirePackage{color}
+\RequirePackage{xcolor}
+\definecolor{shade}{RGB}{245,245,245}
+
+% langauge
+
+\RequirePackage{inputenc}
+\RequirePackage{babel}
+
+% math
+
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+
+% figures
+
+\NewDocumentCommand\includeFigure{O{1}mmO{htbp!}}
+{
+	\begin{figure}[#4]
+	\centering%
+	\IfDecimal{#1}%
+  {%
+		\includegraphics[scale=#1]{figures/#2}%
+	}%
+	{%
+		\includegraphics[#1]{figures/#2}%
+	}%
+	\caption[]{#3}%
+	\label{figure:#2}%
+	\end{figure}
+}
+
+% references
+
+\NewDocumentCommand\referToSection{m}%
+{%
+	\textsection\ \ref{section:#1}/\pageref{section:#1}%
+}%
+
+\NewDocumentCommand\referToFigure{m}%
+{%
+	Figure \ref{figure:#1}/\pageref{figure:#1}%
+}%
+
+\NewDocumentCommand\referToTable{m}%
+{%
+	Table \textsection\ref{table:#1}/\pageref{table:#1}%
+}%
+
+% sections
+
+\NewDocumentCommand\startSectionAux{O{\empty}O{section}mm}
+{%
+	\lowercase{
+		\ifthenelse{\equal{#1}{\empty}}
+		{\def\templabel{#3}}
+		{\def\templabel{#1}}
+	}
+
+	\StrSubstitute{\templabel}{ }{-}[\templabel]
+	\StrSubstitute{\templabel}{,}{}[\templabel]
+	\StrSubstitute{\templabel}{'}{}[\templabel]
+
+	\csname#4\endcsname{#3}\label{#2:\templabel}
+}
+
+\NewDocumentCommand\startSection{O{1}mO{\empty}}
+{
+	\ifthenelse{\equal{#1}{2}}
+	{\startSectionAux[#3]{#2}{subsection}}
+	{\ifthenelse{\equal{#1}{3}}
+	{\startSectionAux[#3]{#2}{subsubsection}}
+	{\startSectionAux[#3]{#2}{section}}
+	}
+}
+
+% tables
+
+\NewDocumentCommand\makeTable{O{htbp!}mmmmm}
+{
+	\begin{table}[#1]
+	\centering
+	\rowcolors{2}{shade}{white}
+	\begin{tabular}{#4}
+	\hline
+	#5\\
+	\hline
+	#6\\
+	\end{tabular}
+	\caption[]{#3}
+	\label{table:#2}
+	\end{table}
+}
+
+% bnf shorthands
+
+\NewDocumentCommand\nonterm{m}{\text{\texttt{<#1>}}}
+\NewDocumentCommand\term{m}{\text{\texttt{`#1'}}}
+
+% math shorthands
+
+\NewDocumentCommand\ceil{m}{\ensuremath{\left\lceil{#1}\right\rceil}}
+\NewDocumentCommand\floor{m}{\ensuremath{\left\lfloor{#1}\right\rfloor}}
+\NewDocumentCommand\set{m}{\ensuremath{\left\{{#1}\right\}}}
+\NewDocumentCommand\st{m}{\ensuremath{\left|\ {#1}\right.}}
+\NewDocumentCommand\seq{m}{\ensuremath{\left[{#1}\right]}}
+\NewDocumentCommand\card{m}{\ensuremath{\left|{#1}\right|}}
+\NewDocumentCommand\p{m}{\ensuremath{\left({#1}\right)}}
+\NewDocumentCommand\tuple{m}{\ensuremath{\left\langle{#1}\right\rangle}}
+\NewDocumentCommand\iverson{m}{\seq{#1}}
+
+% other shorthands
+
+\NewDocumentCommand\mono{m}{\texttt{#1}} % deprecated
+\NewDocumentCommand\email{m}{\texttt{\href{mailto:#1}{#1}}}
