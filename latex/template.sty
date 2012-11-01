@@ -16,6 +16,12 @@
 \RequirePackage{ifthen}
 \RequirePackage{xkeyval}
 
+% citations
+
+\RequirePackage{cite}
+
+% enumerate, itemize, description
+
 \RequirePackage{expdlist}
 \RequirePackage{multirow}
 \RequirePackage{enumerate}
@@ -154,7 +160,6 @@
 
 \ifthenelse{\equal{\dofancy}{true}}{
 
-\RequirePackage{fullpage}
 \RequirePackage{fancyhdr}
 \RequirePackage{lastpage}
 
@@ -272,25 +277,24 @@
 	\ifthenelse{\equal{\dofancy}{true}}{\thispagestyle{first}}{}
 }
 
-% other shorthands
+% bnf shorthands
 
-\NewDocumentCommand\mono{m}{{\ttfamily#1}}
+\NewDocumentCommand\nonterm{m}{\text{\texttt{<#1>}}}
+\NewDocumentCommand\term{m}{\text{\texttt{`#1'}}}
 
-\NewDocumentCommand\email{m}{\mono{\href{mailto:#1}{#1}}}
+% math shorthands
 
-% math mode shorthands
-
-\NewDocumentCommand\textt{m}{\ensuremath{\text{\mono{#1}}}}
-\NewDocumentCommand\nonterm{m}{\textt{<#1>}}
-\NewDocumentCommand\term{m}{\textt{`#1'}}
 \NewDocumentCommand\ceil{m}{\ensuremath{\left\lceil{#1}\right\rceil}}
 \NewDocumentCommand\floor{m}{\ensuremath{\left\lfloor{#1}\right\rfloor}}
 \NewDocumentCommand\set{m}{\ensuremath{\left\{{#1}\right\}}}
-\NewDocumentCommand\st{m}{\ensuremath{\left|{#1}\right.}}
+\NewDocumentCommand\st{m}{\ensuremath{\left|\ {#1}\right.}}
 \NewDocumentCommand\seq{m}{\ensuremath{\left[{#1}\right]}}
 \NewDocumentCommand\card{m}{\ensuremath{\left|{#1}\right|}}
-\NewDocumentCommand\parens{m}{\ensuremath{\left({#1}\right)}}
+\NewDocumentCommand\p{m}{\ensuremath{\left({#1}\right)}}
 \NewDocumentCommand\tuple{m}{\ensuremath{\left\langle{#1}\right\rangle}}
 \NewDocumentCommand\iverson{m}{\seq{#1}}
 
+% other shorthands
 
+\NewDocumentCommand\mono{m}{\texttt{#1}} % deprecated
+\NewDocumentCommand\email{m}{\texttt{\href{mailto:#1}{#1}}}

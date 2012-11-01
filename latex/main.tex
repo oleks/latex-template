@@ -1,30 +1,25 @@
-\documentclass[a4paper,twocolumn]{article}
+\documentclass[a4paper]{article}
 
 \usepackage[fancy]{oleks}
 
 \setup{%
   subject={\LaTeX},%
   assignment={Template},%
-  date={March 29th, 2012.}%
+  date={October 29, 2012.}%
 }
 \setupLocation[short=DIKU]{Datalogisk institut, Copenhagen University}
 \setupAuthor[addendum={\email{oleks@diku.dk}}]{Oleksandr Shturmov}
 
-\newcommand{\commandstyle}[0]{\tt\textbackslash}
-\newcommand{\command}[1]{{\commandstyle #1}}
+\newcommand{\commandstyle}[0]{{\ttfamily\textbackslash}}
+\newcommand{\command}[1]{\texttt{\textbackslash #1}}
 
 \begin{document}
 
-\twocolumn[\maketitle]
+\maketitle
 \thispagestyle{first}
 
 \input{math}
 
-\newpage
-
-Bla..
-
-\bibliographystyle{apalike}
-\bibliography{../references}
+\input{references}
 
 \end{document}

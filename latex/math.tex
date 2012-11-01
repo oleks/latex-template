@@ -7,45 +7,46 @@ these macros are generically useful.
 \subsection{Groups}
 
 Very often, mathematical expressions make use of grouping constructs such as
-$\ceil{}$, $\floor{}$, $\parens{}$, etc. These constructs are relatively easy
-to use in \LaTeX (with the \mono{amsmath} package), despite the fact that one
-has to often distinguish between the left and right connectives, as with e.g.
+$\ceil{}$, $\floor{}$, $\p{}$, etc. These constructs are relatively easy to use
+in \LaTeX (with the \mono{amsmath} package), despite the fact that one has to
+often distinguish between the left and right connectives, as with e.g.
 \command{lfoor} and \command{rfloor}. What makes these groups particularly
 impractical however, is that the height of the connectives is not automatically
 adjusted to the content they enclose. To this end, one may resort to using the
 commands \command{left} and \command{right}, as respective connective
 prefixes\dots Yuk!  This lead to the specification of the following macros:
 
-\begin{description}[\setleftmargin{80pt}\setlabelstyle{\commandstyle}]
+\begin{description}[\setleftmargin{80pt}]
 
-\item [ceil\{group\}] $\ceil{\textt{group}}$
+\item [\command{ceil\{group\}}] $\ceil{\mathtt{group}}$
 
-\item [floor\{group\}] $\floor{\textt{group}}$
+\item [\command{floor\{group\}}] $\floor{\mathtt{group}}$
 
-\item [set\{group\}] $\set{\textt{group}}$
+\item [\command{set\{group\}}] $\set{\mathtt{group}}$
 
-\item [seq\{group\}] $\seq{\textt{group}}$\quad (as in, \emph{sequence})
+\item [\command{seq\{group\}}] $\seq{\mathtt{group}}$\quad (as in,
+\emph{sequence})
 
-\item [card\{group\}] $\card{\textt{group}}$\quad (as in, \emph{cardinality})
+\item [\command{card\{group\}}] $\card{\mathtt{group}}$\quad (as in,
+\emph{cardinality})
 
-\item [tuple\{group\}] $\tuple{\textt{group}}$
+\item [\command{tuple\{group\}}] $\tuple{\mathtt{group}}$
 
-\item [parens\{group\}] $\parens{\textt{group}}$
+\item [\command{p\{group\}}] $\p{\mathtt{group}}$
 
-\item [st\{group\}] $\st{\textt{group}}$\quad (as in, \emph{such that})
+\item [\command{st\{group\}}] $\st{\mathtt{group}}$\quad (as in, \emph{such
+that})
 
 \end{description}
 
 
 \subsection{Backus-Naur Form}
 
-\begin{description}[\setleftmargin{90pt}\setlabelstyle{\commandstyle}]
+\begin{description}[\setleftmargin{90pt}]
 
-\item [textt\{group\}] typewriter text in math mode.
+\item [\command{nonterm\{group\}}] $\nonterm{group}$
 
-\item [nonterm\{group\}] $\nonterm{\textt{group}}$
-
-\item [term\{group\}] $\term{\textt{group}}$
+\item [\command{term\{group\}}] $\term{group}$
 
 \end{description}
 
