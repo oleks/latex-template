@@ -1,54 +1,19 @@
-(deprecated)
+My personal LaTeX template and survival pack.
 
-This is a growing collection of updated commands I've built up over the recent
-years.
+This work is licensed under the Creative Commons Attribution 3.0 Unported
+License. To view a copy of this license, visit
+http://creativecommons.org/licenses/by/3.0/.
 
-**********
-* SAMPLE *
-**********
+See [
 
-\documentclass{article}
+# Template
 
-\usepackage{oleks}
+The template is intended to serve as a generic template for my written work at
+the university.
 
-\setup{location=DIKU,subject=Advanced}
-\setup{assignment=Hello,date=1970-01-02}
+## Setup
 
-\setupAuthor[short=os,addendum=1990-11-17]{Oleksandr Shturmov}
-
-\begin{document}
-
-\maketitle
-
-\startSection{Top section}
-\startSection[2]{Subsection's first}
-\startSection[3]{Subsubsection}[hello]
-
-\includeFigure[0.5]{somefile}{Some caption}
-
-\referToSection{top-section}
-\referToSection{subsections-first}
-\referToSection{hello}
-
-\referToFigure{somefile}
-
-\makeTable
-{hello}
-{Nice table}
-{cc}
-{noob&nice}
-{
-lol&lol\\
-lol&lol
-}
-
-\referToTable{hello}
-
-\end{document}
-
-*********
-* SETUP *
-*********
+A series of commands are supplied for basic document setup.
 
 Setup is the part of the package where a series of commands have been supplied
 to enable initial document setup, such as the title, due date, headers and
@@ -65,7 +30,7 @@ To start of with, there are two options, you can choose to apply the fancy
 style included in the package or not, by either specifying
 \usepackage[fancy]{oleks} or \usepacakge{oleks} respectively.
 
-\setup{<keyvalues>}
+    \setup{<keyvalues>}
 
 General properties setup, except for the author.
 
@@ -100,11 +65,7 @@ students involved like some sort of identification number. This specification
 will show up in the top left corner of the header, just below the short/long
 author specification.
 
-
-************
-* COMMANDS *
-************
-
+# Survival pack
 
 * REFERENCES *
 
