@@ -2,8 +2,8 @@ My personal LaTeX template and survival pack.
 
 This work is licensed under the Creative Commons Attribution 3.0 Unported
 License. To view a copy of this license, visit
-http://creativecommons.org/licenses/by/3.0/. Attributes must happen by
-referring to https://github.com/oleks/.
+http://creativecommons.org/licenses/by/3.0/. Attribution must happen by
+reference to https://github.com/oleks/.
 
 # Template
 
