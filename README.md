@@ -23,8 +23,8 @@ the fancy flavour, add the atom `fancy` as an option, i.e.
 
 A series of commands are supplied for basic document setup, i.e. the work
 title, author, due date, etc. The commands make sure to update the LaTeX
-commands `\title`, `\author`, as well as the fields `pdftitle` and `pdfauthor`
-in the `\hypersetup` command.
+commands `\title`, `\author`, as well as set the fields `pdftitle` and
+`pdfauthor` in a `\hypersetup` command.
 
     \setup{<keyvalues>}
 
