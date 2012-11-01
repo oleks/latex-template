@@ -2,33 +2,28 @@ My personal LaTeX template and survival pack.
 
 This work is licensed under the Creative Commons Attribution 3.0 Unported
 License. To view a copy of this license, visit
-http://creativecommons.org/licenses/by/3.0/.
-
-See [
+http://creativecommons.org/licenses/by/3.0/. Attributes must happen by
+referring to https://github.com/oleks/.
 
 # Template
 
 The template is intended to serve as a generic template for my written work at
 the university.
 
+## Import
+
+The template has two flavours, one that uses fancy headers and footers, and one
+that does not. The latter is the default. To import the template with the fancy
+flavour write.
+
+    \usepackage[fancy]{template}
+
 ## Setup
 
-A series of commands are supplied for basic document setup.
-
-Setup is the part of the package where a series of commands have been supplied
-to enable initial document setup, such as the title, due date, headers and
-footers, etc.
-
-There's not too much freedom due to a farely constrained initial layout, and
-besides, the package is meant for university assignments which should bear a
-resemblance to one another in terms of layout.
-
-The macros also make sure to both update the latex \title and \author, as well
-as the pdftitle and pdfauthor specifications in \hypersetup.
-
-To start of with, there are two options, you can choose to apply the fancy
-style included in the package or not, by either specifying
-\usepackage[fancy]{oleks} or \usepacakge{oleks} respectively.
+A series of commands are supplied for basic document setup, i.e. the work
+title, author, due date, etc. The commands make sure to update the LaTeX
+commands `\title`, `\author`, as well as the fields `pdftitle` and `pdfauthor`
+in the `\hypersetup` command.
 
     \setup{<keyvalues>}
 
@@ -67,7 +62,7 @@ author specification.
 
 # Survival pack
 
-* REFERENCES *
+## References
 
 The way references are styled is inspired by Accelerated C++, ISBN
 0-201-70353-X. The idea is to both show the section/figure/table counter value
@@ -91,7 +86,7 @@ Refer to labels figure:<label>.
 Refer to labels tabel:<label>.
 
 
-* FIGURES *
+## Figures
 
 \includeFigure[<options>]{<filename>}{<caption>}[<float>]
 
@@ -113,8 +108,7 @@ thereafter deterministically set to "figure:filename".
 <float> This argument to allows you to change the floating options of the figure.
 Defaults to htbp!.
 
-
-* SECTIONS *
+## Sections
 
 \startSection[<level>]{<name>}[<label>]
 
@@ -139,7 +133,7 @@ refuses the input.
 name. The final label is always prefixed with section: regardleth of the depth.
 Defaults to : see <name> argument.
 
-* TABLES *
+## Tables
 
 \makeTable[<float>]{<label>}{<caption>}{<layout>}{<headers>}{<rows>}
 
