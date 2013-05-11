@@ -11,13 +11,14 @@
 \setupLocation[short=DIKU]{Datalogisk institut, Copenhagen University}
 \setupAuthor[addendum={\email{oleks@diku.dk}}]{Oleksandr Shturmov}
 
+% Extra commands just for the purposes of this document.
 \newcommand{\commandstyle}[0]{{\ttfamily\textbackslash}}
 \newcommand{\command}[1]{\texttt{\textbackslash #1}}
 
 \begin{document}
 
 \maketitle
-\thispagestyle{first}
+\thispagestyle{first} % no fancy header on first page (just a fancy footer).
 
 \input{math}
 
