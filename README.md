@@ -95,7 +95,7 @@ This command allows you to quickly import a figre using the regular
 \includegraphics command from graphicx. The figure is pulled from the
 ``figures'' directory which is assumed to exist in the project root.
 
-Arguments: 
+Arguments:
 
 <options> You have a choice here, either specify a numeric value which will
 default to the scale of the included graphic, or the entire options string for
@@ -158,3 +158,11 @@ as usual.
 
 <rows> The rows of the table separated by \\ with the columns separated by &,
 as usual.
+
+## Bibliography
+
+I choose to do bibliography manually rather than using BibTeX as BibTeX styles
+typically only define a layout for a certain subset of the possible entries.
+This forces you to work around the entries, and around the styles if you want
+to include information other than what the style supports. I find this
+counterintuitive.
