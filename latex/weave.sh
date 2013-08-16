@@ -1,5 +1,8 @@
 #!/bin/sh
-
+#
+# Copyright (c) 2013 Oleksandr Shturmov
+# Licensed under the MIT license. See ./LICENSE for details.
+#
 # This script allows you to quickly run pdflatex to build your sources. You can
 # run the script without arguments, in which case the script assumes that a
 # file named root.tex exists and is the root tex file. The script creates (if

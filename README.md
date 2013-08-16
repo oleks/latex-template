@@ -1,9 +1,7 @@
-My personal LaTeX template and survival pack.
+Copyright (c) 2013 Oleksandr Shturmov
+Licensed under the MIT license. See ./latex/LICENSE for details.
 
-This work is licensed under the Creative Commons Attribution 3.0 Unported
-License. To view a copy of this license, visit
-http://creativecommons.org/licenses/by/3.0/. Attribution must happen by
-reference to https://github.com/oleks/.
+My personal LaTeX template and survival pack.
 
 # Template
 
@@ -109,31 +107,6 @@ thereafter deterministically set to "figure:filename".
 <float> This argument to allows you to change the floating options of the figure.
 Defaults to htbp!.
 
-## Sections
-
-\startSection[<level>]{<name>}[<label>]
-
-A shorthand for defining sections, subsections and so on. The command attempts
-to generate a label for the section, sparing you the expense.
-
-Arguments:
-
-<level> Level of the section to define, for now only 1, 2 & 3 are supported.
-See http://en.wikibooks.org/wiki/LaTeX/Document_Structure#Sectioning_Commands
-for more information. Defaults to 1.
-
-<name> Name of the section. If the name matches [a-z_-' ]/i, the label becomes
-the name lower-cased with space characters replaced by dashes. This allows to
-quickly reference a section, subsection, and so on, using the
-\referToSection{<label>} command. ATTENTION! If the name contains characters
-other than those that are allowed, and and no label override is provided, no
-warning or error is produced, so the script may fail if the \label command
-refuses the input. 
-
-<label> Override label to allow commands and other special characters in the
-name. The final label is always prefixed with section: regardleth of the depth.
-Defaults to : see <name> argument.
-
 ## Tables
 
 \makeTable[<float>]{<label>}{<caption>}{<layout>}{<headers>}{<rows>}
@@ -159,6 +132,12 @@ as usual.
 <rows> The rows of the table separated by \\ with the columns separated by &,
 as usual.
 
+## Math
+
+See
+[./latex/output/template.pdf](https://github.com/oleks/latex-template/blob/master/latex/output/template.pdf?raw=true
+"template.pdf").
+
 ## Bibliography
 
 I choose to do bibliography manually rather than using BibTeX as BibTeX styles
@@ -166,3 +145,4 @@ typically only define a layout for a certain subset of the possible entries.
 This forces you to work around the entries, and around the styles if you want
 to include information other than what the style supports. I find this
 counterintuitive.
+
