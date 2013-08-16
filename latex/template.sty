@@ -26,7 +26,7 @@
 \RequirePackage{multirow}
 \RequirePackage{enumerate}
 
-%colors
+% colors
 
 \RequirePackage{color}
 \RequirePackage{xcolor}
@@ -47,6 +47,7 @@
 \RequirePackage{amssymb}
 \RequirePackage{amsmath}
 \RequirePackage{amsthm}
+\RequirePackage{euler}
 
 \everymath{\displaystyle}
 
@@ -57,16 +58,16 @@
 \RequirePackage{listings}
 \lstset
 {
-	tabsize=2,
-	numbers=left,
-	breaklines=true,
-	backgroundcolor=\color{shade},
-	framexleftmargin=0.05in,
-	basicstyle=\ttfamily\small,
-	numberstyle=\tiny,
-	keywordstyle=\color{RoyalBlue},
-	stringstyle=\color{Maroon},
-	commentstyle=\color{ForestGreen}
+  tabsize=2,
+  numbers=left,
+  breaklines=true,
+  backgroundcolor=\color{shade},
+  framexleftmargin=0.05in,
+  basicstyle=\ttfamily\small,
+  numberstyle=\tiny,
+  keywordstyle=\color{RoyalBlue},
+  stringstyle=\color{Maroon},
+  commentstyle=\color{ForestGreen}
 }
 
 
@@ -76,13 +77,13 @@
 \RequirePackage[pdftex,colorlinks=true]{hyperref}
 \hypersetup
 {
-	bookmarksnumbered,
-	linkcolor=RoyalBlue,
-	anchorcolor=RoyalBlue,
-	citecolor=RoyalBlue,
-	urlcolor=RoyalBlue,
-	pdfstartview={FitV},
-	pdfdisplaydoctitle
+  bookmarksnumbered,
+  linkcolor=RoyalBlue,
+  anchorcolor=RoyalBlue,
+  citecolor=RoyalBlue,
+  urlcolor=RoyalBlue,
+  pdfstartview={FitV},
+  pdfdisplaydoctitle
 }
 
 % setup
@@ -124,8 +125,8 @@
 
 \define@key{setupLocation}{short}{\setShortLocation{#1}}
 \NewDocumentCommand\setupLocation{O{}m}{%
-	\setLongLocation{#2}%
-	\setkeys{setupLocation}{#1}%
+    \setLongLocation{#2}%
+    \setkeys{setupLocation}{#1}%
 }
 
 % author
@@ -152,8 +153,8 @@
 \define@key{setupAuthor}{short}{\setShortAuthor{#1}}
 \define@key{setupAuthor}{addendum}{\setAuthorAddendum{#1}}
 \NewDocumentCommand\setupAuthor{O{}m}{%
-	\setLongAuthor{#2}%
-	\setkeys{setupAuthor}{#1}%
+  \setLongAuthor{#2}%
+  \setkeys{setupAuthor}{#1}%
 }
 
 % fancy
@@ -175,8 +176,8 @@
 %
 \fancypagestyle{first}%
 {%
-	\fancyhf{}%
-	\cfoot{\thepage/\pageref*{LastPage}}%
+  \fancyhf{}%
+  \cfoot{\thepage/\pageref*{LastPage}}%
 }%
 }{}
 
@@ -188,14 +189,14 @@
 
 \RenewDocumentCommand\maketitle{}%
 {%
-	\begin{center}%
-	\LARGE\assignment\\\ \\%
+  \begin{center}%
+  \LARGE\assignment\\\ \\%
   \large\longLocation\ (\shortLocation)\\%
   \large\subject\\\ \\%
-	\large\longAuthor\\%
-	\normalsize\authorAddendum\\\ \\%
-	\normalsize\staticDate%
-	\end{center}%
-	\ifthenelse{\equal{\dofancy}{true}}{\thispagestyle{first}}{}%
+  \large\longAuthor\\%
+  \normalsize\authorAddendum\\\ \\%
+  \normalsize\staticDate%
+  \end{center}%
+  \ifthenelse{\equal{\dofancy}{true}}{\thispagestyle{first}}{}%
 }%
 

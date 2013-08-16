@@ -1,8 +1,12 @@
 \section{Math extensions}
 
+% Extra commands just for the purposes of this document.
+\def\commandstyle{{\ttfamily\textbackslash}}
+\def\command#1{\texttt{\textbackslash #1}}
+
 The math exetensions were inspired as I was making my way through
 \cite{concrete-mathematics}, and various courses at DIKU. It seems to me that
-these macros are generically useful.
+these macros are useful in general.
 
 \subsection{Groups}
 
@@ -16,39 +20,42 @@ adjusted to the content they enclose. To this end, one may resort to using the
 commands \command{left} and \command{right}, as respective connective
 prefixes\dots Yuk!  This lead to the specification of the following macros:
 
-\begin{description}[\setleftmargin{80pt}]
+\vspace{0.1in}
 
-\item [\command{ceil\{group\}}] $\ceil{\mathtt{group}}$
+\noindent
+\begin{tabular}{lcl}
 
-\item [\command{floor\{group\}}] $\floor{\mathtt{group}}$
+\command{ceil\{group\}} & $\ceil{\mathtt{group}}$ \\
 
-\item [\command{set\{group\}}] $\set{\mathtt{group}}$
+\command{floor\{group\}} & $\floor{\mathtt{group}}$ \\
 
-\item [\command{seq\{group\}}] $\seq{\mathtt{group}}$\quad (as in,
-\emph{sequence})
+\command{set\{group\}} & $\set{\mathtt{group}}$ \\
 
-\item [\command{card\{group\}}] $\card{\mathtt{group}}$\quad (as in,
-\emph{cardinality})
+\command{seq\{group\}} & $\seq{\mathtt{group}}$ & (as in, \emph{sequence}) \\
 
-\item [\command{tuple\{group\}}] $\tuple{\mathtt{group}}$
+\command{card\{group\}} & $\card{\mathtt{group}}$ & (as in, \emph{cardinality})
+\\
 
-\item [\command{p\{group\}}] $\p{\mathtt{group}}$
+\command{chev\{group\}} & $\chev{\mathtt{group}}$ & (as in, \emph{chevrons}) \\
 
-\item [\command{st\{group\}}] $\st{\mathtt{group}}$\quad (as in, \emph{such
-that})
+\command{p\{group\}} & $\p{\mathtt{group}}$ & (as in, \emph{parenstheses}) \\
 
-\end{description}
+\command{st\{group\}} & $\st{\mathtt{group}}$ & (as in, \emph{such that})
 
+\end{tabular}
 
 \subsection{Backus-Naur Form}
 
-\begin{description}[\setleftmargin{90pt}]
+\vspace{0.1in}
 
-\item [\command{nonterm\{group\}}] $\nonterm{group}$
+\noindent
+\begin{tabular}{lcl}
 
-\item [\command{term\{group\}}] $\term{group}$
+\command{nonterm\{group\}} & $\nonterm{group}$ \\
 
-\end{description}
+\command{term\{group\}} & $\term{group}$
+
+\end{tabular}
 
 \subsection{Cormen}
 
