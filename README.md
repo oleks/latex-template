@@ -1,7 +1,12 @@
-Copyright (c) 2013 Oleksandr Shturmov
-Licensed under the MIT license. See ./latex/LICENSE for details.
-
 My personal LaTeX template and survival pack.
+
+The libraries themselves
+([./latex/template.sty](https://github.com/oleks/latex-template/blob/master/latex/template.sty))
+and
+([./latex/survival-pack.sty](https://github.com/oleks/latex-template/blob/master/latex/survival-pack.sty))
+are published under the MIT License. The example itself
+([./latex/](https://github.com/oleks/latex-template/tree/master/latex)) and
+this README are in the public domain.
 
 # Template
 
